@@ -1,20 +1,36 @@
 <html>
 	<head>
-        
+		<script src="/static/script.js"></script>
+		
+
         <title>title</title>
         
         <link rel="stylesheet" href="/static/style.css" type="text/css">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">  
-        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+		
+			
+		</script>
 	</head>
 	<body>
         <div class="container-fluid">
-            <div class="header">some title</div>
+            <div class="header">Perfect Playlist</div>
             <div class="input-group">
                   <span class="input-group-addon">Playlist url</span>
-                  <input type="text" class="form-control" placeholder="https://play.spotify.com/user/12127504627/playlist/2ZURjmOOrCO7YVCfERZR2T" aria-describedby="basic-addon1">
+                  <input type="text" class="form-control" placeholder="https://play.spotify.com/user/12127504627/playlist/2ZURjmOOrCO7YVCfERZR2T" aria-describedby="basic-addon1" id="url" onchange= "embed()">
             </div>
-            <div id="sortbutton">sort!</div>
+            
+            <center><select class="options" id="algorithm" name="options" style="header" onchange="embed()">
+                <div class="dropdown-content">
+                    <option value="">Link 1</option>
+                    <option value="">Link 2</option>
+                    <option value="">Link 3</option>
+                </div>
+            </select></center>
+			
+			<div id="sortbutton" onclick="embed()">sort!</div>
+			<div class="embed"><center><iframe id= "embed" src= "https://embed.spotify.com/?uri=spotify:user:12127504627:playlist:2ZURjmOOrCO7YVCfERZR2T"  width="300" height="380" frameborder="0" allowtransparency="true"></iframe></center></div>
         </div>
 	</body>
 </html>
+
