@@ -11,7 +11,7 @@ def func(username):
     if len(sys.argv)>1:
         username = sys.argv[1]
     else:
-        print "Usage: %s username" % (sys.argv[0],)
+        print "This is how you run it: %s username" % (sys.argv[0],)
         sys.exit()
 
     token = util.prompt_for_user_token(username, scope, SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI)
