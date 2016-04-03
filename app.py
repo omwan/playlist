@@ -50,7 +50,7 @@ def chooser(playlistid=None, userid=None):
     token = session.get('token', None)
     sp = spotipy.Spotify(auth=token)
     get_playlist_json(sp, userid, playlistid)
-    return render_template('index3.html', userid=userid, playlistid=playlistid)
+    return render_template('index4.html', userid=userid, playlistid=playlistid)
 
         
 if __name__ == "__main__":
