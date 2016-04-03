@@ -6,6 +6,7 @@ import spotipy
 import spotipy.util as util
 from showPlaylists import show_tracks
 from flask import redirect
+from flask import render_template
 from flask import request
 app = Flask(__name__)
 SESSION_TYPE = 'filesystem'
