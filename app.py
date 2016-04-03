@@ -49,8 +49,8 @@ def chooser(playlistid=None, userid=None, result=None):
     userid = session.get('uid', None)
     token = session.get('token', None)
     sp = spotipy.Spotify(auth=token)
-    playlist = get_playlist_json(sp, userid, playlistid)
-    result = playlist['href']
+    p = get_playlist_json(sp, userid, playlistid)
+    result = p['href']
     import code; code.interact(local=locals())
     return render_template('index.html', result=result)
 

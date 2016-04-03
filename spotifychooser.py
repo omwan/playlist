@@ -9,7 +9,7 @@ def energies(alist):
     list_of_tracks = alist
     lenergies=[]
     for i in list_of_tracks:
-        lenergies.append(i["energy"])
+        lenergies.append(i['energy'])
     return lenergies
 
 def dances(alist):
@@ -17,7 +17,7 @@ def dances(alist):
     list_of_tracks = alist
     ldances=[]
     for i in list_of_tracks:
-        ldances.append(i["danceability"])
+        ldances.append(i['danceability'])
     return ldances
 
 def tempos(alist):
@@ -25,7 +25,7 @@ def tempos(alist):
     list_of_tracks = alist
     ltempos=[]
     for i in list_of_tracks:
-        ltempos.append(i["tempo"])
+        ltempos.append(i['tempo'])
     return ltempos
 
 def climax(alist):
@@ -79,11 +79,11 @@ def idlist(alist):
     list_of_tracks = playlistmaker(alist)
     lids=[]
     for i in list_of_tracks:
-        lids.append(i["id"])
+        lids.append(i['id'])
     return lids   
 
 def get_ids_from_playlist(plist):
-    list_of_tracks = plist["items"]
+    list_of_tracks = plist['items']
     idplist = []
     k=[]
     for i in list_of_tracks:
