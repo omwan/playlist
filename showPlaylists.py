@@ -3,6 +3,7 @@
 import sys
 import spotipy
 import spotipy.util as util
+from spotifyThing import authorize
 
 ##def show_tracks(request):
 ##    for i, item in enumerate(tracks['items']):
@@ -43,12 +44,8 @@ import spotipy.util as util
 
 
 def getToken():
+    auth_url = authorize()
+    code = sp_oauth.parse_response_code(auth_url)
+    token_info = sp_oauth.get_access_token(code)
 
-
-    client_id = os.getenv('SPOTIPY_CLIENT_ID')
-    client_secret = os.getenv('SPOTIPY_CLIENT_SECRET')
-    redirect_uri = os.getenv('SPOTIPY_REDIRECT_URI')
-
-    sp_oauth = SpotifyOAuth(client_id, client_secret, redirect_uri)
-
-    return sp_oauth.access_token
+    return token_info['access_token']
