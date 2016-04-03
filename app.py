@@ -1,4 +1,5 @@
 from flask import Flask, session
+from flask.ext.session import Session
 from spotifyThing import authorize
 from showPlaylists import show_tracks
 from flask import redirect
