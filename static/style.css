@@ -4,6 +4,10 @@ body {
     font-size: 15px;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 .button {
     width:200px;
     margin:30px auto;
@@ -27,25 +31,21 @@ body {
     height:100px;
     width:100%;
     background:#000;
-    color:#fff;
     line-height:100px;
     font-size:20px;
     font-weight: bold;
     text-align:center;
     border-bottom: 10px solid #4CAF50;
-    
 }
 
-.playlists {
-    width:300px;
-    font-size:12px;
-    background:#fff;
-    border:1px solid #4CAF50;
+.header a {
+    color:#fff;
 }
 
-.playlists option {
-    border-top:1px solid #4CAF50;
-    padding:5px;
+#lists {
+    max-width:500px;
+    margin:auto;
+    text-align:center;
 }
 
 .embed {

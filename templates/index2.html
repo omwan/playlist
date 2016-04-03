@@ -3,7 +3,7 @@
 
 <div class="row">
     <a href="/tracks"><div class="button" id="playlists">show playlists</div></a>
-    <table class="table table-hover">
+    <table class="table table-hover" id="lists">
         {% for n in name %}
             <tr><td><a href="/chooser/{{n.id}}">{{n.title}}</a></td></tr>
         {% endfor %}
