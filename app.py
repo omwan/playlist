@@ -2,6 +2,7 @@ from flask import Flask
 from spotifyThing import authorize
 from showPlaylists import show_tracks
 from flask import redirect
+from flask import request
 app = Flask(__name__)
 
 from flask import render_template
@@ -16,6 +17,7 @@ def test(name=None):
 
 @app.route('/tracks')
 def tracks(name=None):
+    query_string = request.query_string
     return show_tracks();
         
 if __name__ == "__main__":
