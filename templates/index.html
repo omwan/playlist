@@ -2,11 +2,13 @@
 {% extends "layout.html" %}
 {% block body %}
 
+{% block %}
+
 {% if code is none %}
 <a href="/auth"><div class="button" id="authorize">authorize</div></a>
 {% endif %}
 
-{% if code is not none %}
+{%  %}
 <a href="/tracks"><div class="button" id="playlists">show playlists</div></a>
 
 <select class="playlists" onChange="location.href=this.options[this.selectedIndex].value;">>
