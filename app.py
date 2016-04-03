@@ -4,7 +4,7 @@ from showPlaylists import show_tracks
 from flask import redirect
 from flask import request
 app = Flask(__name__)
-SESSION TYPE = 'filesystem'
+SESSION_TYPE = 'filesystem'
 app.config.from_object(__name__)
 Session(app)
 
