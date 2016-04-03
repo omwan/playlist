@@ -12,6 +12,6 @@ def show_tracks(token):
     playlists = sp.user_playlists(username)
     returnList = []
     for playlist in playlists['items']:
-        if playlist['owner']['name'] == sp.me()['display_name']:
+        if playlist['owner']['id'] == username:
             returnList.append({'title': playlist['name'], 'id': playlist['id']})
     return returnList
