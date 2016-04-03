@@ -21,10 +21,10 @@ def hello(name=None):
     if token is None:
         return render_template('index.html', name=name)
     else:
+        print "we have a token, which is: " + token
         sp = spotipy.Spotify(auth=token)
         user = sp.me()
         session['token'] = token
-        print "we have a token, which is: " + token
         return render_template('index.html', name=name)
 
 @app.route('/auth/')
