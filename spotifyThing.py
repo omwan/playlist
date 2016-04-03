@@ -1,23 +1,17 @@
 import sys
 import spotipy
 import spotipy.util as util
+from spotipy.oauth2 import SpotifyOAuth
 scope = 'user-library-read'
 
 
-def func(username):
-    if len(sys.argv)>1:
-        username = sys.argv[1]
-    else:
-        print "This is how you run it: %s username" % (sys.argv[0],)
-        sys.exit()
+def authorize():
 
-    token = util.prompt_for_user_token(username, scope)
 
-    if token:
-        sp = spotipy.Spotify(auth=token)
-        results = sp.current_user_saved_tracks()
-        for item in results['items']:
-            track = item['track']
-            print track['name'] + ' - ' + track['artists'][0]['name']
-    else:
-        print "Can't get token for", username
+    client_id = os.getenv('SPOTIPY_CLIENT_ID')
+    client_secret = os.getenv('SPOTIPY_CLIENT_SECRET')
+    redirect_uri = os.getenv('SPOTIPY_REDIRECT_URI')
+
+    sp_oauth = SpotifyOAuth(client_id, client_secret, redirect_uri)
+
+    return sp_oauth.get_authorize_url()

@@ -1,5 +1,6 @@
 from flask import Flask
-from spotifyThing import func
+from spotifyThing import authorize
+from flask import redirect
 app = Flask(__name__)
 
 from flask import render_template
@@ -10,7 +11,7 @@ def hello(name=None):
 
 @app.route('/auth/')
 def test(name=None):
-    return func(username)
+    return redirect(authorize(), code=302)
         
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5001)
