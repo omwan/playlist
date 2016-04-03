@@ -13,7 +13,7 @@ def show_tracks(token):
     returnString = ""
     for playlist in playlists:
         returnString = returnString + playlist['name']
-    return playlists
+    return returnString
 ##    for playlist in playlists['items']:
 ##        if playlist['owner']['id'] == username:
 ##            print
