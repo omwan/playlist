@@ -7,13 +7,17 @@
 
         <title>title</title>
         
-<!--        <link rel="stylesheet" href="/static/style.css" type="text/css">-->
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="/static/style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">  
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+
+		</script>
 	</head>
 	<body>
-        <div class="container">
+        <div class="container-fluid">
             <div class="header">Perfect Playlist</div>
             {% block body %}{% endblock %}
+            
         </div>
 	</body>
 </html>
