@@ -15,11 +15,9 @@
 	<body>
         <div class="container-fluid">
             <div class="header">Perfect Playlist</div>
-            <a href="/auth"><div style="width:200px;padding:20px;background:#ccc">authorize</div></a>
-            <div class="input-group">
-                  <span class="input-group-addon">Playlist url</span>
-                  <input type="text" class="form-control" placeholder="https://play.spotify.com/user/12127504627/playlist/2ZURjmOOrCO7YVCfERZR2T" aria-describedby="basic-addon1" id="url" onchange= "embed()">
-            </div>
+            <a href="/auth"><div class="button" id="authorize">authorize</div></a>
+            
+            <div class="playlists"></div>
             
             <center><select class="options" id="algorithm" name="options" style="header" onchange="embed()">
                 <div class="dropdown-content">
