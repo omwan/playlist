@@ -103,10 +103,4 @@ def get_playlist_json(sp, uid, pid):
     """
     
     """
-##    return track_ids_to_playlist(sp, uid, pid,
-##                                 idlist(
-  ##                                   sp.audio_features(
-    ##                                     get_ids_from_playlist(
-      ##                                       plistTotracks(sp, uid,pid)))))
-    print sp.user_playlist_replace_tracks( uid, pid, idlist(sp.audio_features(get_ids_from_playlist(plistTotracks(sp, uid, pid))))) 
-    return sp.user_playlist_replace_tracks( uid, pid, idlist(sp.audio_features(get_ids_from_playlist(plistTotracks(sp, uid, pid)))))
+    sp.user_playlist_replace_tracks( uid, pid, idlist(sp.audio_features(get_ids_from_playlist(plistTotracks(sp, uid, pid)))))
