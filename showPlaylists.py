@@ -12,7 +12,7 @@ def show_tracks(token):
     playlists = sp.user_playlists(username)
     returnString = ""
     for playlist in playlists['items']:
-        returnString = returnString + playlist['name']
+        returnString = returnString + playlist['id']
     return returnString
 ##    for playlist in playlists['items']:
 ##        if playlist['owner']['id'] == username:
