@@ -2,14 +2,18 @@
 {% block body %}
 
 <div class="row">
+    <div class="col-md-8">
     <a href="/tracks"><div class="button" id="playlists">show playlists</div></a>
     <table class="table table-hover" id="lists">
         {% for n in name %}
             <tr><td><a href="/chooser/{{n.id}}">{{n.title}}</a></td></tr>
         {% endfor %}
     </table>
+    </div>
 
-    <div class="embed"><center><iframe id= "embed" src= "https://embed.spotify.com/?uri=spotify:user:{{userid}}:playlist:{{playlistid}}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe></center></div>
+    <div class="col-md-4">
+        <div class="embed"><center><iframe id= "embed" src= "https://embed.spotify.com/?uri=spotify:user:{{userid}}:playlist:{{playlistid}}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe></center></div>
+    </div>
 </div>
 
 {% endblock %}
