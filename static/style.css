@@ -37,14 +37,14 @@ body {
 }
 
 .playlists {
-    margin:15px auto;
-    max-width:500px;
-    background:#4CAF50;
-    color:#fff;
-    text-align:center;
-    font-weight:bold;
-    padding: 5px;
-    font-size: 30px;
+    width:300px;
+    font-size:12px;
+    background:#fff;
+    border:none;
+}
+
+.playlists option {
+    border-top:1px solid #4CAF50;
 }
 
 .embed {
