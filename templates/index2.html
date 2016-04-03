@@ -1,4 +1,5 @@
-
+{% extends "layout.html" %}
+{% block body %}
 
 <a href="/tracks"><div class="button" id="playlists">show playlists</div></a>
 <!--            {% if code is not none %}-->
@@ -9,3 +10,5 @@
     {% endfor %}
 </select>
 <!--            {% endif %}-->
+
+{% endblock %}
