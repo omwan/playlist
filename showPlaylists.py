@@ -44,8 +44,26 @@ from spotifyThing import authorize
 
 
 def getToken():
-    auth_url = authorize()
-    code = sp_oauth.parse_response_code(auth_url)
-    token_info = sp_oauth.get_access_token(code)
 
-    return token_info['access_token']
+##    client_id = os.getenv('SPOTIPY_CLIENT_ID')
+##    client_secret = os.getenv('SPOTIPY_CLIENT_SECRET')
+##    redirect_uri = os.getenv('SPOTIPY_REDIRECT_URI')
+##
+##    sp_oauth = SpotifyOAuth(client_id, client_secret, redirect_uri)
+##    
+##    auth_url = authorize()
+##    code = sp_oauth.parse_response_code(auth_url)
+##    token_info = sp_oauth.get_access_token(code)
+    
+    scope = 'user-library-read'
+    token = util.prompt_for_user_token(username, scope)
+
+    returnString = ""
+
+    sp = spotipy.Spotify(auth=token)
+    results = sp.current_user_saved_tracks()
+    for item in results['items']:
+        track = item['track']
+        returnString = returnString + track['name'] + ' - ' + track['artists'][0]['name']
+
+    return returnString
