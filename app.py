@@ -1,6 +1,9 @@
 from flask import Flask, session
 from flask.ext.session import Session
 from spotifyThing import authorize
+import sys
+import spotipy
+import spotipy.util as util
 from showPlaylists import show_tracks
 from flask import redirect
 from flask import request
