@@ -1,5 +1,5 @@
 import unittest
-import spotipy
+from spotipy import Spotify
 import copy
 
 from spotipy import Spotify
