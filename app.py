@@ -41,7 +41,7 @@ def tracks(name=None):
     return render_template('index.html', name=name)
 
 @app.route('/chooser/<playlistid>')
-def tracks(playlistid=None):
+def chooser(playlistid=None):
     return render_template('index.html', playlistid=playlistid)
 
         
