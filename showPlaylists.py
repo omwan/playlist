@@ -11,8 +11,8 @@ def show_tracks(token):
     username = sp.me()["id"]
     playlists = sp.user_playlists(username)
     returnString = ""
-    for i in playlists:
-        returnString = returnString + playlists['name']
+    for playlist in playlists:
+        returnString = returnString + playlist['name']
     return playlists
 ##    for playlist in playlists['items']:
 ##        if playlist['owner']['id'] == username:
