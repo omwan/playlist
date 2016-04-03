@@ -106,5 +106,6 @@ def get_playlist_json(sp, uid, pid):
     return track_ids_to_playlist(sp, uid, pid,
                                  idlist(
                                      sp.audio_features(
-                                         plistTotracks(sp, uid,pid))))
+                                         get_ids_from_playlist(
+                                             plistTotracks(sp, uid,pid)))))
 
