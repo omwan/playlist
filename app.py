@@ -8,6 +8,7 @@ from showPlaylists import show_tracks
 from flask import redirect
 from flask import render_template
 from flask import request
+from spotifychooser import main
 app = Flask(__name__)
 SESSION_TYPE = 'filesystem'
 app.config.from_object(__name__)
@@ -28,6 +29,7 @@ def hello(name=None):
         token = sp_oauth.get_access_token(code)
         sp = spotipy.Spotify(auth=token['access_token'])
         user = sp.me()
+        session['uid'] = user
         session['token'] = token['access_token']
         return render_template('index.html')
 
@@ -41,8 +43,9 @@ def tracks(name=None):
     return render_template('index.html', name=name)
 
 @app.route('/chooser/<playlistid>')
-def chooser(playlistid=None):
-    return render_template('index.html', playlistid=playlistid)
+def chooser(playlistid=None, userid=None):
+    userid = session.get('uid', None)
+    return render_template('index.html', playlistid=playlistid, userid=userid)
 
         
 if __name__ == "__main__":

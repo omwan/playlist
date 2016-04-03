@@ -20,7 +20,7 @@
             
             <select class="playlists" onChange="location.href=this.options[this.selectedIndex].value;">>
                 {% for n in name %}
-                <option value="/chooser/{n.id}">{{n.title}}</option>
+                <option value="/chooser/{{n.id}}">{{n.title}}</option>
                 {% endfor %}
             </select>
             
