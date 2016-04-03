@@ -4,10 +4,10 @@ import sys
 import spotipy
 import spotipy.util as util
 
-def show_tracks(results):
+def show_tracks():
     for i, item in enumerate(tracks['items']):
         track = item['track']
-        print "   %d %32.32s %s" % (i, track['artists'][0]['name'],
+        return "   %d %32.32s %s" % (i, track['artists'][0]['name'],
             track['name'])
 
 
