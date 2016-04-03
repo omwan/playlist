@@ -11,7 +11,7 @@ def show_tracks(token):
     username = sp.me()["id"]
     playlists = sp.user_playlists(username)
     returnString = ""
-    for playlist in playlists:
+    for playlist in playlists['items']:
         returnString = returnString + playlist['name']
     return returnString
 ##    for playlist in playlists['items']:
