@@ -2,8 +2,9 @@ from flask import Flask
 from spotifyThing import authorize
 from flask import redirect
 app = Flask(__name__)
-
+app.debug = True
 from flask import render_template
+
 
 @app.route('/')
 def hello(name=None):
