@@ -17,11 +17,13 @@ from flask import render_template
 
 @app.route('/')
 def hello(name=None):
-    token = request.args.get("code", None)
-    if token is None:
+    code = request.args.get("code", None)
+    if code is None:
         return render_template('index.html', name=name)
     else:
-        print "we have a token, which is: " + token
+        print "we have a code, which is: " + code
+        sp_oauth = authorize()
+        token = sp_oauth.get_access_token(code)
         sp = spotipy.Spotify(auth=token)
         user = sp.me()
         session['token'] = token
@@ -29,7 +31,7 @@ def hello(name=None):
 
 @app.route('/auth/')
 def test(name=None):
-    return redirect(authorize(), code=302)
+    return redirect(authorize().get_authorize_url(), code=302)
 
 @app.route('/tracks')
 def tracks(name=None):
