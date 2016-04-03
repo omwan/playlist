@@ -8,6 +8,7 @@ app = Flask(__name__)
 SESSION_TYPE = 'filesystem'
 app.config.from_object(__name__)
 Session(app)
+app.debug = True
 
 from flask import render_template
 
