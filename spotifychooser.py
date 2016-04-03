@@ -80,8 +80,18 @@ def idlist(alist):
         lids.append(i["id"])
     return lids   
 
+def get_ids_from_playlist(plist):
+    list_of_tracks = alist["items"]
+    idplist = []
+    k=[]
+    for i in list_of_tracks:
+        k = i["tracks"]
+        idsplist.append(k["id"])
+    return idsplist
+
+
 def plistTotracks(sp, uid,pid):
-    return sp.user_playlist_tracks(uid, playlist_id=pid, fields='items(id)')
+    return sp.user_playlist_tracks(uid, playlist_id=pid, fields='items(track(id))')
 
 def track_ids_to_playlist(sp, uid,pid,trackids):
     """
