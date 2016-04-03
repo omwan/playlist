@@ -20,7 +20,7 @@
             
             <select class="playlists">
                 {% for n in name %}
-                <option>{{n.title}}</option>
+                <option value="/chooser/{n.id}">{{n.title}}</option>
                 {% endfor %}
             </select>
             

@@ -40,6 +40,10 @@ def tracks(name=None):
     name = show_tracks(session.get('token', None))
     return render_template('index.html', name=name)
 
+@app.route('/chooser/<playlistid>')
+def tracks(playlistid=None):
+    return render_template('index.html', playlistid=playlistid)
+
         
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5001)
