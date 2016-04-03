@@ -1,4 +1,5 @@
 import unittest
+import spotipy
 
 clim = {
     "danceability" : 0.366,
@@ -163,17 +164,15 @@ class ClimaxTests(unittest.TestCase):
     def test_idlist(self):
         self.assertEqual(idlist([song1,song2,clim]), ["2takcwOaAZWiXQijPHIx7B","7ouMYWpwJ422jRcDASZB7P","4VqPOruhp5EdPBeR92t6lQ"])
 
-
-import spotipy
-
 def plistTotracks(uid,pid):
-    user_playlist_tracks(uid, playlist_id=pid, fields=id)
+    user_playlist_tracks(uid, playlist_id=pid, fields='id')
 
 def tracksToplist(uid,pid,trackids):
     user_playlist_replace_tracks(uid, pid, trackids)
 
 def main(uid,pid):
-    tracksToplist(uid, pid, idlist(audio_features(plistTotracks(uid,pid)))["audio_features"])
-
+    list = plistTotracks(uid,pid)
+    
+  ##  tracksToplist(uid, pid, idlist(audio_features(plistTotracks(uid,pid)))["audio_features"])
 if __name__ == '__main__':
                          unittest.main()
