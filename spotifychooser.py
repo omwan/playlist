@@ -2,6 +2,8 @@ import unittest
 import spotipy
 import copy
 
+from spotipy import Spotify
+
 def energies(alist):
     """create a list of the energies of the songs"""
     list_of_tracks = alist

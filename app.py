@@ -9,6 +9,8 @@ from flask import redirect
 from flask import render_template
 from flask import request
 from spotifychooser import *
+import copy
+from spotipy import Spotify
 app = Flask(__name__)
 SESSION_TYPE = 'filesystem'
 app.config.from_object(__name__)
@@ -48,7 +50,7 @@ def chooser(playlistid=None, userid=None, result=None):
     token = session.get('token', None)
     sp = spotipy.Spotify(auth=token)
     playlist = get_playlist_json(sp, userid, playlistid)
-    result = playlist.href
+    result = playlist['href']
     import code; code.interact(local=locals())
     return render_template('index.html', result=result)
 
