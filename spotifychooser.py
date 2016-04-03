@@ -2,8 +2,6 @@ import unittest
 from spotipy import Spotify
 import copy
 
-from spotipy import Spotify
-
 def energies(alist):
     """create a list of the energies of the songs"""
     list_of_tracks = alist
@@ -105,9 +103,9 @@ def get_playlist_json(sp, uid, pid):
     """
     
     """
-    return track_ids_to_playlist(sp, uid, pid,
-                                 idlist(
-                                     sp.audio_features(
-                                         get_ids_from_playlist(
-                                             plistTotracks(sp, uid,pid)))))
-
+##    return track_ids_to_playlist(sp, uid, pid,
+##                                 idlist(
+  ##                                   sp.audio_features(
+    ##                                     get_ids_from_playlist(
+      ##                                       plistTotracks(sp, uid,pid)))))
+      return plistTotracks(sp, uid, pid)
