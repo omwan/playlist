@@ -17,8 +17,8 @@ def test(name=None):
 
 @app.route('/tracks')
 def tracks(name=None):
-    query_string = request.query_string
-    return show_tracks();
+    token = authorize().access_token
+    return token;
         
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5001)
