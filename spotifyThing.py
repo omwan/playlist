@@ -11,6 +11,6 @@ def authorize():
     client_id = os.getenv('SPOTIPY_CLIENT_ID')
     client_secret = os.getenv('SPOTIPY_CLIENT_SECRET')
     redirect_uri = os.getenv('SPOTIPY_REDIRECT_URI')
-    scope = 'user-library-read'
+    scope = 'user-library-read playlist-read-private'
 
     return SpotifyOAuth(client_id, client_secret, redirect_uri, scope)
