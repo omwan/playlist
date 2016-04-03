@@ -23,7 +23,7 @@ def hello(name=None):
         return render_template('index.html', name=name)
 
 @app.route('/auth/')
-def test(name=None)
+def test(name=None):
     return redirect(authorize(), code=302)
 
 @app.route('/tracks')
