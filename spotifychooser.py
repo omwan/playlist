@@ -81,7 +81,7 @@ def idlist(alist):
     return lids   
 
 def get_ids_from_playlist(plist):
-    list_of_tracks = alist["items"]
+    list_of_tracks = plist["items"]
     idplist = []
     k=[]
     for i in list_of_tracks:
