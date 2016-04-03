@@ -87,7 +87,7 @@ def get_ids_from_playlist(plist):
     for i in list_of_tracks:
         k = i['track']
         idplist.append(k["id"])
-    return idsplist
+    return idplist
 
 
 def plistTotracks(sp, uid,pid):
