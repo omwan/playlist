@@ -25,7 +25,7 @@ def hello(name=None):
         print "we have a code, which is: " + code
         sp_oauth = authorize()
         token = sp_oauth.get_access_token(code)
-        sp = spotipy.Spotify(auth=token)
+        sp = spotipy.Spotify(auth=token['access_token'])
         user = sp.me()
         session['token'] = token
         return render_template('index.html', name=name)
