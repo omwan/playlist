@@ -1,35 +1,17 @@
-<html>
-	<head>
-        
-		<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-		<script src="/static/script.js"></script>
-		
 
-        <title>title</title>
-        
-        <link rel="stylesheet" href="/static/style.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">  
-        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+{% extends "layout.html" %}
+{% block body %}
 
-		</script>
-	</head>
-	<body>
-        <div class="container-fluid">
-            <div class="header">Perfect Playlist</div>
-            <a href="/auth"><div class="button" id="authorize">authorize</div></a>
-            
-            <a href="/tracks"><div class="button" id="playlists">show playlists</div></a>
-            {% if code is not none %}
-            <select class="playlists" onChange="location.href=this.options[this.selectedIndex].value;">>
-                <option value="/">choose a playlist</option>
-                {% for n in name %}
-                <option value="/chooser/{{n.id}}">{{n.title}}</option>
-                {% endfor %}
-            </select>
-            {% endif %}
-            
-            <div class="embed"><center><iframe id= "embed" src= "https://embed.spotify.com/?uri=spotify:user:{{userid}}:playlist:{{playlistid}}"  width="300" height="380" frameborder="0" allowtransparency="true"></iframe></center></div>
-        </div>
-	</body>
-</html>
+<a href="/auth"><div class="button" id="authorize">authorize</div></a>
 
+<a href="/tracks"><div class="button" id="playlists">show playlists</div></a>
+<!--            {% if code is not none %}-->
+<select class="playlists" onChange="location.href=this.options[this.selectedIndex].value;">>
+    <option value="/">choose a playlist</option>
+    {% for n in name %}
+    <option value="/chooser/{{n.id}}">{{n.title}}</option>
+    {% endfor %}
+</select>
+<!--            {% endif %}-->
+
+{% endblock %}
