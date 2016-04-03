@@ -28,7 +28,7 @@ def hello(name=None):
         sp = spotipy.Spotify(auth=token['access_token'])
         user = sp.me()
         session['token'] = token['access_token']
-        return render_template('index.html', name=name)
+        return render_template('index.html')
 
 @app.route('/auth/')
 def test(name=None):
@@ -36,9 +36,9 @@ def test(name=None):
 
 @app.route('/tracks')
 def tracks(name=None):
-##    show_tracks(session.get('token', None))
-##    return render_template('index.html', name=name)
-    return show_tracks(session.get('token', None))
+    playlists = show_tracks(session.get('token', None))
+    return render_templates('index.html', playlists=playlists)
+##    return show_tracks(session.get('token', None))
         
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5001)
