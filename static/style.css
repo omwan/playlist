@@ -4,7 +4,7 @@ body {
     background: #4CAF50;
 }
 
-#sortbutton {
+.button {
     width:100px;
     margin:30px auto;
     text-align:center;
@@ -12,6 +12,7 @@ body {
     background:#4CAF50;
     color:#BEEF9E;
     font-weight:bold;
+    
 }
 
 .input-group {
@@ -32,6 +33,7 @@ body {
     padding: 32px;
     font-size: 30px;
 }
+
 .options {
     margin:15px auto;
     width:50%;
@@ -43,6 +45,7 @@ body {
     padding: 15px;
     font-size: 30px;
 }
+
 .embed {
 	margin:20px auto;
 	padding: 32px;
