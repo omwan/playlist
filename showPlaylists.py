@@ -12,5 +12,5 @@ def show_tracks(token):
     playlists = sp.user_playlists(username)
     returnString = ""
     for playlist in playlists['items']:
-        returnString = returnString + playlist['name']
+        returnString += '<li>' + playlist['name'] + '</li>'
     return returnString
