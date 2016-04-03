@@ -33,7 +33,7 @@ def hello(name=None, code=None):
         user = sp.me()
         session['uid'] = user['id']
         session['token'] = token['access_token']
-        return render_template('index.html', code=code)
+        return render_template('index2.html', code=code)
 
 @app.route('/auth/')
 def test(name=None):
@@ -42,7 +42,7 @@ def test(name=None):
 @app.route('/tracks/')
 def tracks(name=None):
     name = show_tracks(session.get('token', None))
-    return render_template('index.html', name=name)
+    return render_template('index2.html', name=name)
 
 @app.route('/chooser/<playlistid>')
 def chooser(playlistid=None, userid=None):
@@ -50,7 +50,7 @@ def chooser(playlistid=None, userid=None):
     token = session.get('token', None)
     sp = spotipy.Spotify(auth=token)
     get_playlist_json(sp, userid, playlistid)
-    return render_template('index.html', userid=userid, playlistid=playlistid)
+    return render_template('index2.html', userid=userid, playlistid=playlistid)
 
         
 if __name__ == "__main__":
