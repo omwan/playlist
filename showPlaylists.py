@@ -10,6 +10,9 @@ def show_tracks(token):
     sp = spotipy.Spotify(auth=token)
     username = sp.me()["id"]
     playlists = sp.user_playlists(username)
+    returnString = ""
+    for i in playlists:
+        returnString = returnString + playlists['name']
     return playlists
 ##    for playlist in playlists['items']:
 ##        if playlist['owner']['id'] == username:
