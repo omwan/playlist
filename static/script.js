@@ -18,6 +18,6 @@ function embed() {
 $(document).ready(function(){
     //get the json generated from the website, and do this function to it
     $.get('https://api.spotify.com/v1/me/playlists?limit=10&offset=5', function(data){
-        JSON.parse(data.text).items
+        console.log(JSON.parse(data.text).items)
     })
 })
