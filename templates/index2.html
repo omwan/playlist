@@ -4,11 +4,6 @@
 <a href="/tracks"><div class="button" id="playlists">show playlists</div></a>
 <select class="playlists" onChange="location.href=this.options[this.selectedIndex].value;">>
     <option value="/">choose a playlist</option>
-</select>
-
-<a href="/tracks"><div class="button" id="playlists">show playlists</div></a>
-<select class="playlists" onChange="location.href=this.options[this.selectedIndex].value;">>
-    <option value="/">choose a playlist</option>
     {% for n in name %}
     <option value="/chooser/{{n.id}}">{{n.title}}</option>
     {% endfor %}
