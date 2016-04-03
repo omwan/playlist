@@ -18,14 +18,14 @@
             <div class="header">Perfect Playlist</div>
             <a href="/auth"><div class="button" id="authorize">authorize</div></a>
             
+            <a href="/tracks"><div class="button" id="playlists">show playlists</div></a>
             <select class="playlists" onChange="location.href=this.options[this.selectedIndex].value;">>
                 {% for n in name %}
                 <option value="/chooser/{{n.id}}">{{n.title}}</option>
                 {% endfor %}
             </select>
             
-            
-            <a href="/tracks"><div class="button" id="playlists">show playlists</div></a>
+            <div class="embed"><center><iframe id= "embed" src= "https://embed.spotify.com/?uri=spotify:user:{{userid}}:playlist:{{result}}"  width="300" height="380" frameborder="0" allowtransparency="true"></iframe></center></div>
         </div>
 	</body>
 </html>

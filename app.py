@@ -43,9 +43,10 @@ def tracks(name=None):
     return render_template('index.html', name=name)
 
 @app.route('/chooser/<playlistid>')
-def chooser(playlistid=None, userid=None):
+def chooser(playlistid=None, userid=None, result=None):
     userid = session.get('uid', None)
-    return render_template('index.html', playlistid=playlistid, userid=userid)
+    result = main(userid, playlistid).pid
+    return render_template('index.html', result=result)
 
         
 if __name__ == "__main__":
