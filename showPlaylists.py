@@ -13,4 +13,4 @@ def show_tracks(token):
     returnList = []
     for playlist in playlists['items']:
         returnList.append(playlist["name"])
-    return returnString
+    return returnList
