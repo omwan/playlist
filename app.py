@@ -1,6 +1,6 @@
 from flask import Flask
 from spotifyThing import authorize
-from showPlaylists import show_tracks
+from showPlaylists import getToken
 from flask import redirect
 from flask import request
 app = Flask(__name__)
@@ -17,8 +17,7 @@ def test(name=None):
 
 @app.route('/tracks')
 def tracks(name=None):
-    token = authorize().access_token
-    return token;
+    return getToken();
         
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5001)
