@@ -1,7 +1,6 @@
 body {
     font-family:calibri;
     font-size: 15px;
-    background: #4CAF50;
 }
 
 .button {
@@ -32,6 +31,8 @@ body {
     line-height:100px;
     font-size:20px;
     font-weight: bold;
+    text-align:center;
+    border-bottom: 10px solid #4CAF50;
     
 }
 
