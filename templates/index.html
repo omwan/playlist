@@ -18,11 +18,11 @@
             <div class="header">Perfect Playlist</div>
             <a href="/auth"><div class="button" id="authorize">authorize</div></a>
             
-            <ul class="playlists">
+            <select class="playlists">
                 {% for n in name %}
-                <li>{{n}}</li>
+                <option>{{n.title}}</option>
                 {% endfor %}
-            </ul>
+            </select>
             
             
             <a href="/tracks"><div class="button" id="playlists">show playlists</div></a>
