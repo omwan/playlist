@@ -9,8 +9,8 @@ def show_tracks(token):
     
     sp = spotipy.Spotify(auth=token)
     username = sp.me()["id"]
-    playlists = sp.user_playlists(username)
-    returnString = ""
-    for playlist in playlists['items']:
-        returnString += '<li>' + playlist['name'] + '</li>'
-    return returnString
+    return sp.user_playlists(username)
+##    returnString = ""
+##    for playlist in playlists['items']:
+##        returnString += '<li>' + playlist['name'] + '</li>'
+##    return returnString
