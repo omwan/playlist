@@ -8,9 +8,10 @@ from spotifyThing import authorize
 def show_tracks(token):
     
     sp = spotipy.Spotify(auth=token)
-    username = sp.me()["id"]
+    username = sp.me()['id']
     playlists = sp.user_playlists(username)
     returnList = []
     for playlist in playlists['items']:
-        returnList.append({'title': playlist['name'], 'id': playlist['id']})
+        if playlist['owner']['name'] == sp.me()['display_name']:
+            returnList.append({'title': playlist['name'], 'id': playlist['id']})
     return returnList
