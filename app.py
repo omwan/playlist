@@ -45,14 +45,12 @@ def tracks(name=None):
     return render_template('index.html', name=name)
 
 @app.route('/chooser/<playlistid>')
-def chooser(playlistid=None, userid=None, result=None):
+def chooser(playlistid=None, userid=None):
     userid = session.get('uid', None)
     token = session.get('token', None)
     sp = spotipy.Spotify(auth=token)
-    p = get_playlist_json(sp, userid, playlistid)
-    result = p['href']
-    import code; code.interact(local=locals())
-    return render_template('index.html', result=result)
+    get_playlist_json(sp, userid, playlistid)
+    return render_template('index.html', userid=userid, playlistid=playlistid)
 
         
 if __name__ == "__main__":
