@@ -36,7 +36,7 @@ def test(name=None):
     return redirect(authorize().get_authorize_url(), code=302)
 
 @app.route('/tracks/')
-def tracks(name=show_tracks(session.get('token', None)):
+def tracks(name=show_tracks(session.get('token', None))):
     return render_templates('index.html', name=name)
 ##    return show_tracks(session.get('token', None))
         
