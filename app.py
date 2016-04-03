@@ -42,7 +42,7 @@ def test(name=None):
 @app.route('/tracks/')
 def tracks(name=None):
     name = show_tracks(session.get('token', None))
-    return render_template('index2.html', name=name)
+    return render_template('index3.html', name=name)
 
 @app.route('/chooser/<playlistid>')
 def chooser(playlistid=None, userid=None):
@@ -50,7 +50,7 @@ def chooser(playlistid=None, userid=None):
     token = session.get('token', None)
     sp = spotipy.Spotify(auth=token)
     get_playlist_json(sp, userid, playlistid)
-    return render_template('index2.html', userid=userid, playlistid=playlistid)
+    return render_template('index3.html', userid=userid, playlistid=playlistid)
 
         
 if __name__ == "__main__":
