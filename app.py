@@ -8,7 +8,7 @@ from showPlaylists import show_tracks
 from flask import redirect
 from flask import render_template
 from flask import request
-from spotifychooser import main
+from spotifychooser import *
 app = Flask(__name__)
 SESSION_TYPE = 'filesystem'
 app.config.from_object(__name__)
