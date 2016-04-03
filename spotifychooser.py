@@ -81,7 +81,7 @@ def idlist(alist):
     return lids   
 
 def plistTotracks(sp, uid,pid):
-    return sp.user_playlist_tracks(uid, playlist_id=pid, fields='id')
+    return sp.user_playlist_tracks(uid, playlist_id=pid, fields='items(id)')
 
 def track_ids_to_playlist(sp, uid,pid,trackids):
     """
