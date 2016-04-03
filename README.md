@@ -2,7 +2,7 @@
 
 http://devpost.com/software/perfect-party-playlist
 
-Made for HuskyHacks 2015
+Made for HuskyHacks 2016
 
 <h3>Inspiration</h3>
 Our goal was to make a playlist so that there will never be a moment at a party where the next song is so different from the last that the mood is killed and people lose interest.
