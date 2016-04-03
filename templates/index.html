@@ -18,7 +18,7 @@
             <div class="header">Perfect Playlist</div>
             <a href="/auth"><div class="button" id="authorize">authorize</div></a>
             
-            <select class="playlists">
+            <select class="playlists" onChange="location.href=this.options[this.selectedIndex].value;">>
                 {% for n in name %}
                 <option value="/chooser/{n.id}">{{n.title}}</option>
                 {% endfor %}
