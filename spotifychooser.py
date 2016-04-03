@@ -81,12 +81,20 @@ def idlist(alist):
     return lids   
 
 def plistTotracks(uid,pid):
-    user_playlist_tracks(uid, playlist_id=pid, fields='id')
+    return user_playlist_tracks(uid, playlist_id=pid, fields='id')
 
-def tracksToplist(uid,pid,trackids):
-    user_playlist_replace_tracks(uid, pid, trackids)
+def track_ids_to_playlist(uid,pid,trackids):
+    """
+    
+    """
+    return user_playlist_replace_tracks(uid, pid, trackids)
 
-def main(uid,pid):
-##    list = plistTotracks(uid,pid)
-##    tracksToplist(uid, pid, idlist(audio_features(plistTotracks(uid,pid)))["au##dio_features"])
+def get_playlist_json(uid,pid):
+    """
+    
+    """
+    return track_ids_to_playlist(uid, pid,
+                                 idlist(
+                                     audio_features(
+                                         plistTotracks(uid,pid))))
 
