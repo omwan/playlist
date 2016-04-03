@@ -36,9 +36,9 @@ def test(name=None):
     return redirect(authorize().get_authorize_url(), code=302)
 
 @app.route('/tracks')
-def tracks(playlists=None):
-    playlists = show_tracks(session.get('token', None))
-    return render_templates('index.html', playlists=playlists)
+def tracks(name=None):
+    name = show_tracks(session.get('token', None))
+    return render_templates('index.html', name=name)
 ##    return show_tracks(session.get('token', None))
         
 if __name__ == "__main__":
