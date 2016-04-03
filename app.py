@@ -21,7 +21,7 @@ app.debug = True
 from flask import render_template
 
 @app.route('/')
-def hello(name=None):
+def hello(name=None, code=None):
     code = request.args.get("code", None)
     if code is None:
         return render_template('index.html', name=name)
@@ -33,7 +33,7 @@ def hello(name=None):
         user = sp.me()
         session['uid'] = user['id']
         session['token'] = token['access_token']
-        return render_template('index.html')
+        return render_template('index.html', code=code)
 
 @app.route('/auth/')
 def test(name=None):
