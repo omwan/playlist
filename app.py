@@ -9,6 +9,10 @@ from flask import redirect
 from flask import render_template
 from flask import request
 from spotifychooser import *
+import unittest
+from spotipy import Spotify
+import copy
+
 app = Flask(__name__)
 SESSION_TYPE = 'filesystem'
 app.config.from_object(__name__)
