@@ -37,7 +37,7 @@ def test(name=None):
 
 @app.route('/tracks/<name>')
 def tracks(name=None):
-    name = show_tracks(session.get('token', None))
+##    name = show_tracks(session.get('token', None))
     return render_templates('index.html', name=name)
 ##    return show_tracks(session.get('token', None))
         
