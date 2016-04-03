@@ -1,7 +1,9 @@
-$(document).ready(function(){
-    console.log("running")
-    
-    $.get('https://api.spotify.com/v1/me/playlists?limit=10&offset=5', function(data){
-        console.log(JSON.parse(data.text).items)
+var $SCRIPT_ROOT = {{ request.app|tojson|safe }};
+
+$(function( {
+    $.getJSON($SCRIPT_ROOT + "/tracks", function(playlists) {
+        for (var i = 0; i < playlists.length; i++) {
+            $(".playlists").append($('<li></li>').html(playlists[i].name))
+        }
     })
-})
+}))
