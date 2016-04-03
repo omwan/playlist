@@ -45,7 +45,9 @@ def tracks(name=None):
 @app.route('/chooser/<playlistid>')
 def chooser(playlistid=None, userid=None, result=None):
     userid = session.get('uid', None)
-    result = get_playlist_json(userid, playlistid)#.pid
+    token = session.get('token', None)
+    sp = spotipy.Spotify(auth=token)
+    result = get_playlist_json(sp, userid, playlistid)#.pid
     import code; code.interact(local=locals())
     return render_template('index.html', result=result)
 

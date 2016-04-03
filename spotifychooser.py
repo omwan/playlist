@@ -80,21 +80,21 @@ def idlist(alist):
         lids.append(i["id"])
     return lids   
 
-def plistTotracks(uid,pid):
-    return user_playlist_tracks(uid, playlist_id=pid, fields='id')
+def plistTotracks(sp, uid,pid):
+    return sp.user_playlist_tracks(uid, playlist_id=pid, fields='id')
 
-def track_ids_to_playlist(uid,pid,trackids):
+def track_ids_to_playlist(sp, uid,pid,trackids):
     """
     
     """
-    return user_playlist_replace_tracks(uid, pid, trackids)
+    return sp.user_playlist_replace_tracks(uid, pid, trackids)
 
-def get_playlist_json(uid,pid):
+def get_playlist_json(sp, uid, pid):
     """
     
     """
-    return track_ids_to_playlist(uid, pid,
+    return track_ids_to_playlist(sp, uid, pid,
                                  idlist(
-                                     audio_features(
-                                         plistTotracks(uid,pid))))
+                                     sp.audio_features(
+                                         plistTotracks(sp, uid,pid))))
 
