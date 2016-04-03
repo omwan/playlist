@@ -1,6 +1,6 @@
 import unittest
 import spotipy
-
+import copy
 
 def energies(alist):
     """create a list of the energies of the songs"""
@@ -57,7 +57,7 @@ def climaxorder(alist):
 
 def playlistmaker(alist):
     blist = climaxorder(alist)
-    clist = blist.copy()
+    clist = copy.copy(blist)
     climaxs = clist[0]
     climl = blist[1:]
     playrising = []
